@@ -1,5 +1,6 @@
 import React ,{useState} from 'react'
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from 'react-router-dom';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -10,9 +11,17 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import LoginIcon from '@mui/icons-material/Login';
 import axios from 'axios';
+import { Typography } from '@mui/material';
 
 
 export default function Signup() {
+
+//     //Navigation
+//     const navigate = useNavigate();
+
+//   const handleLoginClick = () => {
+//     navigate('/login'); // Navigate to the signup page
+//   };
      //Inputs
 
      const [usernameInput, setUsernameInput] = useState();
@@ -72,7 +81,7 @@ export default function Signup() {
         setPasswordError(false);
      }
 
-
+    // Hanlder show password 
     const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -118,6 +127,20 @@ export default function Signup() {
 
 
         <p></p><Button onClick={handleSubmit} fullWidth startIcon={<LoginIcon />} variant="contained" >SIGN UP</Button></p>
+        <p>
+        <Typography  variant='h5' style={{
+                    fontSize: '10px',
+                    marginTop: '20px',
+                    color: '#666666',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                    textTransform: 'none',
+
+                    '&:hover': {
+                        color: '#007bff'
+                    }
+                }}  >Already Have an account?</Typography> 
+        </p>
        
     </div>
   )

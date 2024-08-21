@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -12,7 +13,16 @@ import LoginIcon from '@mui/icons-material/Login';
 import axios from 'axios';
 import { Typography } from '@mui/material';
 
+
 export default function Login() {
+
+    //Navigation
+    //Navigation
+//     const navigate = useNavigate();
+
+//   const handleSignupClick = () => {
+//     navigate('/signup'); // Navigate to the signup page
+//   };
 
     // Inputs
     const [emailInput, setEmailInput] = useState('');
@@ -151,6 +161,21 @@ export default function Login() {
                     color: '#007bff'
                 }
             }}>Forgot Password?</Typography> </p>
+
+            <p>
+                <Typography  variant='h5' style={{
+                    fontSize: '10px',
+                    marginTop: '20px',
+                    color: '#666666',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                    textTransform: 'none',
+
+                    '&:hover': {
+                        color: '#007bff'
+                    }
+                }} >Don't Have an account signUp!</Typography>
+            </p>
             
 
         </div>
